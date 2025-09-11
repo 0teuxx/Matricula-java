@@ -31,6 +31,8 @@ public class login extends javax.swing.JFrame {
    
     public login() {
         initComponents();
+        
+      carregar();
     }
 
     /**
@@ -42,30 +44,35 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCPF = new javax.swing.JTextField();
+        scrollPane1 = new java.awt.ScrollPane();
+        list1 = new java.awt.List();
+        txtIdade = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtTelefone = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtDataDeNascimento = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnCadastrar = new javax.swing.JButton();
+        btnMatriculae = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        comboBoxCursos = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtCPF.addActionListener(new java.awt.event.ActionListener() {
+        txtIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFActionPerformed(evt);
+                txtIdadeActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("CPF");
+        jLabel1.setText("Idade");
 
-        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefoneActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -82,7 +89,7 @@ public class login extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("Telefone");
+        jLabel2.setText("CPF");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Nome");
@@ -90,68 +97,97 @@ public class login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Data de nascimento");
 
-        btnCadastrar.setText("CADASTRAR");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        btnMatriculae.setText("MATRICULAR");
+        btnMatriculae.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
+                btnMatriculaeActionPerformed(evt);
             }
         });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("MATRICULAR - SE");
+
+        comboBoxCursos.setName(""); // NOI18N
+        comboBoxCursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxCursosActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Cursos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnMatriculae, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(219, 219, 219))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(jLabel5)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(txtDataDeNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                    .addComponent(txtNome)
-                    .addComponent(txtTelefone)
-                    .addComponent(txtCPF))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
-                .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtCpf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDataDeNascimento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
+                        .addContainerGap(428, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(comboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel5)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(comboBoxCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(btnCadastrar)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(btnMatriculae)
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
+    private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFActionPerformed
+    }//GEN-LAST:event_txtIdadeActionPerformed
 
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
@@ -161,44 +197,68 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataDeNascimentoActionPerformed
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+    private void btnMatriculaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatriculaeActionPerformed
   
-        insertUser(txtCPF.getText(),txtNome.getText(),txtTelefone.getText(),txtDataDeNascimento.getText());
+        insertUser(txtNome.getText(),txtCpf.getText(), (String)comboBoxCursos.getSelectedItem() , txtIdade.getText(),txtDataDeNascimento.getText());
         LimparCampo();
-  
-        
+
+    }//GEN-LAST:event_btnMatriculaeActionPerformed
+
+    private void comboBoxCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCursosActionPerformed
+       
+
     
+    }//GEN-LAST:event_comboBoxCursosActionPerformed
 
-    }//GEN-LAST:event_btnCadastrarActionPerformed
-
-    public void inserirDados( String CPF, String Nome, String Telefone, String DataDeNascimento) {
+    public  void   carregar (){
+        
+       comboBoxCursos.addItem("");
+       comboBoxCursos.addItem("Java");
+       comboBoxCursos.addItem("ADM");
+       comboBoxCursos.addItem("PHP");
+       comboBoxCursos.addItem("Mecatronica");
+       comboBoxCursos.addItem("Mecanica");
+       comboBoxCursos.addItem("Operaador de Empilhadeira");
+       comboBoxCursos.addItem("Power BI");
+       comboBoxCursos.addItem("Exel Completo");
+       
+    }
+    
+    public void inserirDados( String Nome, String Cpf, String curso, String Idade, String DataDeNascimento) {
         
     }
     public void LimparCampo() {
-       txtCPF.setText("");
        txtNome.setText("");
-       txtTelefone.setText("");
+       txtCpf.setText("");
+       txtIdade.setText("");
        txtDataDeNascimento.setText("");
+       comboBoxCursos.removeAllItems();
+       
        
     }
    
     public static void main(String args[]) {
    
+        
+     
+       
        login app = new login();
         app.testConnection();
+        app.carregar();
         
         java.awt.EventQueue.invokeLater(() -> new login().setVisible(true));
     }
-    public void insertUser(String cpf, String nome, String telefone, String dataDeNascimento ) {
-        String sql = "INSERT INTO clientes (cpf,nome, telefone, data_nascimento ) VALUES (?, ?, ?, ?)";
+    public void insertUser(String nome, String curso, String cpf,  String idade, String dataDeNascimento ) {
+   String sql = "INSERT INTO clientes (nome, curso, cpf ,  idade, data_nascimento ) VALUES (?, ?, ?, ?, ?)";
        
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
            
-            pstmt.setString(1,cpf);
-            pstmt.setString(2,nome );
-            pstmt.setString(3,telefone );
-            pstmt.setString(4,dataDeNascimento );
+            pstmt.setString(1,nome);
+            pstmt.setString(2,cpf );
+            pstmt.setString(3,curso );
+            pstmt.setString(4,idade );
+            pstmt.setString(5, dataDeNascimento);
            
             int affectedRows = pstmt.executeUpdate();
            
@@ -249,14 +309,19 @@ public class login extends javax.swing.JFrame {
    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnMatriculae;
+    private javax.swing.JComboBox<String> comboBoxCursos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txtCPF;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private java.awt.List list1;
+    private java.awt.ScrollPane scrollPane1;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtDataDeNascimento;
+    private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
