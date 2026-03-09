@@ -1,5 +1,5 @@
 
-# 📚 Progeto de Matrícula Escolar
+# 📚 Projeto de Matrícula Escolar
 
 Projeto desenvolvido para simular um **sistema de matrícula para uma rede estudantil**
 
