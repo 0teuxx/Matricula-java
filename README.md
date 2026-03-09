@@ -15,7 +15,7 @@ Projeto desenvolvido para simular um **sistema de matrícula para uma rede estud
 - Cadastro de alunos
 - Matrícula de estudantes
 - Consulta de registros
-- Atualização e remoção de dados (CRUD)
+- Criação, Leitura, Atualização e Remoção de Dados (CRUD)
 
 ## 👨‍💻 Autor
 
